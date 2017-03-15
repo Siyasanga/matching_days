@@ -1,11 +1,11 @@
-.diff{
-  background-color: red;
+.match{
+  background-color: blue;
 }
-.off{
-  background-color: white;
+.first{
+  background-color: pink;
 }
-.on{
-  background-color: lightblue;
+.second{
+  background-color: yellow;
 }
 .wrapper{
   width: 70%;
