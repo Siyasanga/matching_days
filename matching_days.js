@@ -1,28 +1,42 @@
 var days = document.getElementsByTagName("td");
-var result = [];
+var last1 = -1;
+var last2 = -1;
+var rem1 = "";
+var rem2 = "";
+var day2 = document.getElementById("day2");
+var day1 = document.getElementById("day1");
 //**********************************************
-function markRst(){
-  result = [];
-  for(var i in days.length){
-    console.log(i);
-    console.log("Hello");
-    days[i].classList.remove("off");
-    days[i].classList.add("on");
+day1.addEventListener("change",function () {
+    var day = new Date(day1.value);
+    var ada = new Date(day2.value);
+    if(last1 !== -1){
+      days[last1].classList.remove(rem1);
+    }
+    days[day.getDay()].classList.add("first");
+    rem1 = "first";
+    last1 = day.getDay();
+    if(day.getDay() === last2){
+      days[day.getDay()].classList.remove("first");
+      days[day.getDay()].classList.remove("second");
+      days[day.getDay()].classList.add("match");
+      rem1 = "match";
+      return;
+    }
+});
+day2.addEventListener("change",function () {
+  var day = new Date(day2.value);
+  var ada = new Date(day1.value);
+  if(last2 !== -1){
+    days[last2].classList.remove(rem2);
   }
-}
-//**********************************************
-function dayMarker(date) {
-  var day = new Date(date);
-  if(result.length == 2){
-    markRst();
+  days[day.getDay()].classList.add("second");
+  rem2 = "second";
+  last2 = day.getDay();
+  if(day.getDay() === last1){
+    days[day.getDay()].classList.remove("second");
+    days[day.getDay()].classList.remove("first");
+    days[day.getDay()].classList.add("match");
+    rem2 = "match";
+    return;
   }
-  console.log(day);
-  days[day.getDay()].classList.add("on");
-  result.push(day.getDay());
-}
-//**********************************************
-var dates = document.getElementsByTagName("input");
-
-markRst();
-
-// days[0].addEventListener("change",dayMarker("4 April 2010"));
+});
