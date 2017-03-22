@@ -22,7 +22,7 @@ day1.addEventListener("change",function () {
       days[day.getDay()].classList.remove("first");
       days[day.getDay()].classList.remove("second");
       days[day.getDay()].classList.add("match");
-      rem1 = "match";
+      rem2,rem1 = "match";
     }
 });
 day2.addEventListener("change",function () {
@@ -41,7 +41,6 @@ day2.addEventListener("change",function () {
     days[day.getDay()].classList.remove("second");
     days[day.getDay()].classList.remove("first");
     days[day.getDay()].classList.add("match");
-    rem2 = "match";
-    return;
+    rem1,rem2 = "match";
   }
 });
