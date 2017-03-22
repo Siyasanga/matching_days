@@ -12,6 +12,9 @@ day1.addEventListener("change",function () {
     if(last1 !== -1){
       days[last1].classList.remove(rem1);
     }
+    if(rem1 == "match"){
+      days[last1].classList.add("second");
+    }
     days[day.getDay()].classList.add("first");
     rem1 = "first";
     last1 = day.getDay();
@@ -20,7 +23,6 @@ day1.addEventListener("change",function () {
       days[day.getDay()].classList.remove("second");
       days[day.getDay()].classList.add("match");
       rem1 = "match";
-      return;
     }
 });
 day2.addEventListener("change",function () {
@@ -28,6 +30,9 @@ day2.addEventListener("change",function () {
   var ada = new Date(day1.value);
   if(last2 !== -1){
     days[last2].classList.remove(rem2);
+  }
+  if(rem2 == "match"){
+    days[last2].classList.add("first");
   }
   days[day.getDay()].classList.add("second");
   rem2 = "second";
