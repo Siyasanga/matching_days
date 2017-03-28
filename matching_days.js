@@ -3,8 +3,8 @@ var last1 = -1;
 var last2 = -1;
 var rem1 = "";
 var rem2 = "";
-var day2 = document.getElementById("day2");
 var day1 = document.getElementById("day1");
+var day2 = document.getElementById("day2");
 //**********************************************
 day1.addEventListener("change",function () {
     var day = new Date(day1.value);

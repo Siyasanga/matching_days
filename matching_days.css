@@ -1,3 +1,13 @@
+p{
+  width: 100px;
+  display: inline-block;
+  margin: auto;
+  margin-right: 10px;
+}
+.legend{
+  margin-left: 190px;
+  padding-top: 15px;
+}
 .match{
   background-color: blue;
 }
